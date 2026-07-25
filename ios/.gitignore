@@ -1,0 +1,20 @@
+# Xcode + CocoaPods build artefacts
+build/
+DerivedData/
+xcuserdata/
+*.xcuserstate
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Capacitor sync output
+App/public/
+
+# Fastlane
+fastlane/report.xml
+fastlane/screenshots
+fastlane/test_output

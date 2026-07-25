@@ -1,0 +1,302 @@
+@import "tailwindcss" source(none);
+@import "tw-animate-css";
+@source "../src";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * ETHEREAL BODYLABS — Design System v2.0
+ * Brand direction: Quiet Violet · Liquid Glass
+ * Light-first, muted violet primary, Apple-style translucency & materials.
+ * All colors use oklch. Never hardcode.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface-1: var(--surface-1);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-glow: var(--primary-glow);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-aurora-1: var(--aurora-1);
+  --color-aurora-2: var(--aurora-2);
+  --color-aurora-3: var(--aurora-3);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-chart-6: var(--chart-6);
+  --color-chart-7: var(--chart-7);
+  --color-chart-8: var(--chart-8);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --font-display: "Inter", ui-sans-serif, system-ui, -apple-system, "SF Pro Display", sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "SF Pro Text", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+:root {
+  --radius: 0.875rem;
+
+  /* Light — default UI. Warm paper base with quiet violet accents. */
+  --background: oklch(0.985 0.004 285);
+  --foreground: oklch(0.22 0.02 285);
+
+  --surface-1: oklch(1 0 0);
+  --surface-2: oklch(0.975 0.006 285);
+  --surface-3: oklch(0.955 0.008 285);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.02 285);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.02 285);
+
+  /* Muted violet — the single expressive color */
+  --primary: oklch(0.52 0.11 292);
+  --primary-foreground: oklch(0.99 0.003 285);
+  --primary-glow: oklch(0.66 0.09 296);
+
+  --secondary: oklch(0.955 0.008 285);
+  --secondary-foreground: oklch(0.28 0.02 285);
+  --muted: oklch(0.955 0.008 285);
+  --muted-foreground: oklch(0.5 0.014 285);
+  --accent: oklch(0.94 0.02 292);
+  --accent-foreground: oklch(0.3 0.05 292);
+
+  /* Softer aurora — still present but low chroma */
+  --aurora-1: oklch(0.72 0.08 292);
+  --aurora-2: oklch(0.78 0.06 250);
+  --aurora-3: oklch(0.82 0.05 210);
+
+  --success: oklch(0.62 0.11 155);
+  --success-foreground: oklch(0.99 0.003 155);
+  --warning: oklch(0.72 0.12 75);
+  --warning-foreground: oklch(0.22 0.05 75);
+  --info: oklch(0.62 0.09 235);
+  --info-foreground: oklch(0.99 0.003 235);
+  --destructive: oklch(0.58 0.18 25);
+  --destructive-foreground: oklch(0.99 0.003 25);
+
+  --border: oklch(0.9 0.01 285);
+  --input: oklch(0.92 0.008 285);
+  --ring: oklch(0.62 0.1 292 / 55%);
+
+  --chart-1: oklch(0.58 0.11 292);
+  --chart-2: oklch(0.66 0.09 220);
+  --chart-3: oklch(0.7 0.1 170);
+  --chart-4: oklch(0.72 0.12 75);
+  --chart-5: oklch(0.62 0.14 25);
+  --chart-6: oklch(0.58 0.1 330);
+  --chart-7: oklch(0.6 0.08 250);
+  --chart-8: oklch(0.55 0.02 285);
+
+  --sidebar: oklch(0.98 0.006 285);
+  --sidebar-foreground: oklch(0.28 0.02 285);
+  --sidebar-primary: oklch(0.52 0.11 292);
+  --sidebar-primary-foreground: oklch(0.99 0.003 285);
+  --sidebar-accent: oklch(0.955 0.008 285);
+  --sidebar-accent-foreground: oklch(0.28 0.02 285);
+  --sidebar-border: oklch(0.9 0.01 285);
+  --sidebar-ring: oklch(0.62 0.1 292 / 55%);
+
+  /* Gradients — muted, not neon */
+  --gradient-primary: linear-gradient(135deg, var(--primary), var(--primary-glow));
+  --gradient-aurora: linear-gradient(
+    135deg,
+    oklch(0.86 0.06 292) 0%,
+    oklch(0.9 0.05 250) 50%,
+    oklch(0.94 0.03 210) 100%
+  );
+  --gradient-surface: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--primary) 3%, transparent),
+    transparent
+  );
+
+  /* Elevation — Apple-style soft, neutral */
+  --shadow-xs: 0 1px 2px 0 oklch(0.2 0.02 285 / 6%);
+  --shadow-sm: 0 1px 3px 0 oklch(0.2 0.02 285 / 8%), 0 1px 2px -1px oklch(0.2 0.02 285 / 6%);
+  --shadow-md: 0 6px 20px -8px oklch(0.2 0.02 285 / 12%), 0 2px 6px -2px oklch(0.2 0.02 285 / 6%);
+  --shadow-lg: 0 20px 40px -14px oklch(0.2 0.02 285 / 18%), 0 6px 14px -6px oklch(0.2 0.02 285 / 10%);
+  --shadow-glow: 0 8px 32px -12px color-mix(in oklab, var(--primary) 28%, transparent);
+
+  /* Liquid glass tokens */
+  --glass-tint: oklch(1 0 0 / 60%);
+  --glass-tint-strong: oklch(1 0 0 / 78%);
+  --glass-border: oklch(1 0 0 / 70%);
+  --glass-inner: inset 0 1px 0 0 oklch(1 0 0 / 90%), inset 0 -1px 0 0 oklch(0.5 0.02 285 / 6%);
+
+  --ease-standard: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-emphasized: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-decel: cubic-bezier(0, 0, 0, 1);
+  --duration-fast: 140ms;
+  --duration-base: 240ms;
+  --duration-slow: 420ms;
+}
+
+.dark {
+  /* Dark — optional. Deep neutral, still muted violet. */
+  --background: oklch(0.16 0.012 285);
+  --foreground: oklch(0.96 0.006 285);
+  --surface-1: oklch(0.2 0.014 285);
+  --surface-2: oklch(0.235 0.016 285);
+  --surface-3: oklch(0.27 0.018 285);
+  --card: oklch(0.21 0.014 285);
+  --card-foreground: oklch(0.96 0.006 285);
+  --popover: oklch(0.235 0.016 285);
+  --popover-foreground: oklch(0.96 0.006 285);
+  --primary: oklch(0.72 0.1 292);
+  --primary-foreground: oklch(0.16 0.012 285);
+  --primary-glow: oklch(0.8 0.08 296);
+  --secondary: oklch(0.27 0.018 285);
+  --secondary-foreground: oklch(0.96 0.006 285);
+  --muted: oklch(0.24 0.016 285);
+  --muted-foreground: oklch(0.72 0.012 285);
+  --accent: oklch(0.32 0.04 292);
+  --accent-foreground: oklch(0.96 0.006 285);
+  --aurora-1: oklch(0.62 0.08 292);
+  --aurora-2: oklch(0.66 0.06 250);
+  --aurora-3: oklch(0.72 0.05 210);
+  --border: oklch(1 0 0 / 8%);
+  --input: oklch(1 0 0 / 12%);
+  --ring: oklch(0.72 0.1 292 / 60%);
+  --sidebar: oklch(0.18 0.014 285);
+  --sidebar-foreground: oklch(0.96 0.006 285);
+  --sidebar-primary: oklch(0.72 0.1 292);
+  --sidebar-primary-foreground: oklch(0.16 0.012 285);
+  --sidebar-accent: oklch(0.24 0.016 285);
+  --sidebar-accent-foreground: oklch(0.96 0.006 285);
+  --sidebar-border: oklch(1 0 0 / 6%);
+  --sidebar-ring: oklch(0.72 0.1 292 / 60%);
+
+  --glass-tint: oklch(0.22 0.014 285 / 60%);
+  --glass-tint-strong: oklch(0.22 0.014 285 / 82%);
+  --glass-border: oklch(1 0 0 / 10%);
+  --glass-inner: inset 0 1px 0 0 oklch(1 0 0 / 8%), inset 0 -1px 0 0 oklch(0 0 0 / 20%);
+}
+
+/* ---------- Utilities: Liquid Glass ---------- */
+
+@utility glass {
+  background-color: var(--glass-tint);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-inner), var(--shadow-sm);
+}
+
+@utility glass-strong {
+  background-color: var(--glass-tint-strong);
+  backdrop-filter: blur(28px) saturate(200%);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-inner), var(--shadow-md);
+}
+
+@utility glass-bar {
+  background-color: color-mix(in oklab, var(--background) 72%, transparent);
+  backdrop-filter: blur(24px) saturate(180%);
+  border-color: color-mix(in oklab, var(--foreground) 8%, transparent);
+}
+
+@utility aurora-text {
+  background-image: linear-gradient(135deg, var(--primary) 0%, var(--primary-glow) 100%);
+  background-clip: text;
+  color: transparent;
+}
+
+@utility aurora-bg {
+  background-image: var(--gradient-aurora);
+}
+
+@utility shadow-glow {
+  box-shadow: var(--shadow-glow);
+}
+
+/* Apple-style tap feedback for buttons/rows */
+@utility tap {
+  transition:
+    transform var(--duration-fast) var(--ease-standard),
+    background-color var(--duration-fast) var(--ease-standard),
+    box-shadow var(--duration-fast) var(--ease-standard);
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    color-scheme: light;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklab, var(--primary) 28%, transparent);
+    color: var(--foreground);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}

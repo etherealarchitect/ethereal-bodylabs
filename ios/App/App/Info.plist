@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleDevelopmentRegion</key>
+    <string>en</string>
+    <key>CFBundleDisplayName</key>
+    <string>Ethereal</string>
+    <key>CFBundleExecutable</key>
+    <string>$(EXECUTABLE_NAME)</string>
+    <key>CFBundleIdentifier</key>
+    <string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>CFBundleName</key>
+    <string>$(PRODUCT_NAME)</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0.0</string>
+    <key>CFBundleVersion</key>
+    <string>1</string>
+    <key>LSRequiresIPhoneOS</key>
+    <true/>
+    <key>UILaunchStoryboardName</key>
+    <string>LaunchScreen</string>
+    <key>UIMainStoryboardFile</key>
+    <string>Main</string>
+    <key>UIRequiredDeviceCapabilities</key>
+    <array>
+        <string>arm64</string>
+    </array>
+    <key>ITSAppUsesNonExemptEncryption</key>
+    <false/>
+    <key>UIBackgroundModes</key>
+    <array>
+        <string>remote-notification</string>
+    </array>
+    <key>UISupportedInterfaceOrientations</key>
+    <array>
+        <string>UIInterfaceOrientationPortrait</string>
+    </array>
+    <key>UISupportedInterfaceOrientations~ipad</key>
+    <array>
+        <string>UIInterfaceOrientationPortrait</string>
+        <string>UIInterfaceOrientationPortraitUpsideDown</string>
+        <string>UIInterfaceOrientationLandscapeLeft</string>
+        <string>UIInterfaceOrientationLandscapeRight</string>
+    </array>
+    <key>UIViewControllerBasedStatusBarAppearance</key>
+    <true/>
+
+    <!-- Privacy usage descriptions (required by App Review) -->
+    <key>NSCameraUsageDescription</key>
+    <string>Capture physique check-in photos with pose guides to track your transformation over time.</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Select existing progress photos to include in your transformation timeline.</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>Save your transformation collages to your Photos library.</string>
+    <key>NSFaceIDUsageDescription</key>
+    <string>Use Face ID to unlock Ethereal Bodylabs quickly and securely.</string>
+    <key>NSHealthShareUsageDescription</key>
+    <string>Read body weight, body-fat %, workouts, active energy, sleep, and heart rate from Apple Health so your Ethereal metrics stay in sync.</string>
+    <key>NSHealthUpdateUsageDescription</key>
+    <string>Write workouts and body measurements you log in Ethereal Bodylabs back to Apple Health.</string>
+    <key>NSUserNotificationsUsageDescription</key>
+    <string>Send workout, dosing, and check-in reminders. You can turn these off anytime.</string>
+
+    <!-- Universal Links / Associated Domains handled by App.entitlements. -->
+
+    <!-- App Transport Security: strict; no arbitrary loads. -->
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSAllowsArbitraryLoads</key>
+        <false/>
+    </dict>
+</dict>
+</plist>

@@ -14,7 +14,8 @@
     "test:watch": "vitest",
     "ios:sync": "vite build && cap sync ios",
     "ios:open": "cap open ios",
-    "ios:run": "vite build && cap sync ios && cap run ios"
+    "ios:run": "vite build && cap sync ios && cap run ios",
+    "ios:doctor": "bash scripts/ios-doctor.sh"
   },
   "dependencies": {
     "@capacitor/app": "^8.1.1",
